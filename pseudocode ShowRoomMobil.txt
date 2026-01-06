@@ -1,0 +1,87 @@
+pseudocode ShowRoomMobil
+START
+
+Buat konstanta MAX_MOBIL = 100
+// MAX_MOBIL menyatakan jumlah maksimal mobil yang bisa disimpan adalah 100
+
+Buat array merk[MAX_MOBIL]
+// Untuk menyimpan merek mobil
+
+Buat array model[MAX_MOBIL]
+// Untuk menyimpan model mobil
+
+Buat array tahun[MAX_MOBIL]
+// Untuk menyimpan tahun produksi mobil
+
+Buat array harga[MAX_MOBIL]
+// Untuk menyimpan harga mobil
+
+Buat variabel jumlah = 0
+// Menyimpan jumlah data mobil yang sudah dimasukkan
+
+Buat variabel pilihan
+// Menyimpan pilihan menu dari pengguna
+
+DO
+    Tampilkan menu:
+        "1. Tambah Data Mobil"
+        "2. Tampilkan Data Mobil"
+        "3. Keluar"
+
+    Input pilihan menu
+
+    SWITCH (pilihan)
+
+        CASE 1:
+            // Menu untuk menambah data mobil
+            IF jumlah >= MAX_MOBIL THEN
+                Tampilkan "Data mobil sudah penuh"
+                // Tidak bisa menambah data karena sudah mencapai 100 mobil
+            ELSE
+                Tampilkan "Masukkan data mobil ke-(jumlah + 1)"
+                Input merk[jumlah]
+                Input model[jumlah]
+                Input tahun[jumlah]
+                Input harga[jumlah]
+
+                jumlah ← jumlah + 1
+                // Jumlah data mobil bertambah 1
+
+                Tampilkan "Data mobil berhasil ditambahkan"
+            ENDIF
+            BREAK
+
+        CASE 2:
+            // Menu untuk menampilkan data mobil
+            IF jumlah == 0 THEN
+                Tampilkan "Belum ada data mobil"
+                // Data masih kosong
+            ELSE
+                Tampilkan "DAFTAR MOBIL"
+
+                FOR i ← 0 sampai jumlah - 1 DO
+                    Tampilkan:
+                        Nomor = i + 1
+                        Merek = merk[i]
+                        Model = model[i]
+                        Tahun = tahun[i]
+                        Harga = harga[i]
+                ENDFOR
+            ENDIF
+            BREAK
+
+        CASE 3:
+            // Menu keluar dari program
+            Tampilkan "Terima kasih telah menggunakan program showroom mobil"
+            BREAK
+
+        DEFAULT:
+            // Jika pilihan menu tidak 1, 2, atau 3
+            Tampilkan "Pilihan tidak valid"
+
+    ENDSWITCH
+
+WHILE pilihan ≠ 3
+// Program akan terus berjalan selama pengguna belum memilih menu keluar
+
+END
