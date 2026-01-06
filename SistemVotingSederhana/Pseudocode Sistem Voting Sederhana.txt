@@ -1,0 +1,23 @@
+Pseudocode Sistem Voting Sederhana:
+ALGORITMA VotingMerekMobil
+DEKLARASI
+    votes : kumpulan pasangan (merek, jumlah suara)
+    totalVoters : integer
+    brand : string
+
+DESKRIPSI
+    TAMPILKAN "=== SISTEM VOTING MEREK MOBIL ==="
+    INPUT totalVoters
+
+    UNTUK setiap pemilih dari 1 sampai totalVoters
+        TAMPILKAN "Pemilih ke-", nomor pemilih
+        INPUT brand
+        TAMBAH jumlah suara untuk brand tersebut
+    SELESAI PROSES PEMUNGUTAN SUARA
+
+    TAMPILKAN "=== HASIL VOTING ==="
+    UNTUK setiap merek yang ada di votes
+        TAMPILKAN nama merek dan jumlah suaranya
+    SELESAI MENAMPILKAN HASIL VOTING
+
+SELESAI
